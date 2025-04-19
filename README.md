@@ -1,4 +1,4 @@
-# SuperMarket2024G34
+# SuperMarket
 
 Sistema de clasificación y gestión de productos para un supermercado, desarrollado como proyecto final de la asignatura **Programación III**.
 
@@ -49,7 +49,7 @@ SuperMarket2024G34/
 ## 📖 Instrucciones para ejecutar localmente
 1. Clona el repositorio
 ```bash
-git clone https://github.com/CarlenisVC/SuperMarket.git
+git clone https://github.com/CarlenisVC/SuperMarketCarlenis.git
 ```
 2. Abre la solución en Visual Studio 2022
 3. Ejecuta el proyecto `SuperMarket2024G34`
@@ -89,7 +89,7 @@ git clone https://github.com/CarlenisVC/SuperMarket.git
 ---
 
 ## 🔗 Repositorio
-https://github.com/CarlenisVC/SuperMarket
+https://github.com/CarlenisVC/SuperMarketCarlenis
 
 ---
 
