@@ -1,0 +1,172 @@
+﻿@model Application.Viewmodels.ProductListViewModel
+@{
+    ViewData["Title"] = "Home market";
+}
+
+<link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">🛒 Market List</h1>
+
+    @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+    {
+        <div class="alert @ViewBag.MessageType text-center fw-semibold" role="alert">
+            @ViewBag.Message
+        </div>
+    }
+
+    <div class="row g-4">
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-danger text-white text-center fw-bold">
+                    🍓 Fruits
+                </div>
+                <div class="card-body">
+                    @if (Model.Fruits.Count == 0)
+                    {
+                        <p class="text-muted text-center">There are no fruits.</p>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table align-middle table-bordered">
+                                <thead class="table-light text-center">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Fruits)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.Price</td>
+                                            <td class="text-center">
+                                                <a asp-controller="Market" asp-action="Edit" asp-route-name="@item.Name" class="btn btn-sm btn-outline-primary me-1" title="Edit">
+                                                    <i class="bx bx-edit"></i>
+                                                </a>
+                                                <form method="post" asp-controller="Market" asp-action="DeleteProduct" class="d-inline">
+                                                    <input type="hidden" name="name" value="@item.Name" />
+                                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                                        <i class="bx bx-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-success text-white text-center fw-bold">
+                    🥦 Vegetables
+                </div>
+                <div class="card-body">
+                    @if (Model.Vegetables.Count == 0)
+                    {
+                        <p class="text-muted text-center">There are no vegetables.</p>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table align-middle table-bordered">
+                                <thead class="table-light text-center">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Vegetables)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.Price</td>
+                                            <td class="text-center">
+                                                <a asp-controller="Market" asp-action="Edit" asp-route-name="@item.Name" class="btn btn-sm btn-outline-primary me-1" title="Edit">
+                                                    <i class="bx bx-edit"></i>
+                                                </a>
+                                                <form method="post" asp-controller="Market" asp-action="DeleteProduct" class="d-inline">
+                                                    <input type="hidden" name="name" value="@item.Name" />
+                                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                                        <i class="bx bx-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-warning text-white text-center fw-bold">
+                    🧀 Dairy Products
+                </div>
+                <div class="card-body">
+                    @if (Model.DairyProducts.Count == 0)
+                    {
+                        <p class="text-muted text-center">There are no dairy products.</p>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table align-middle table-bordered">
+                                <thead class="table-light text-center">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.DairyProducts)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.Price</td>
+                                            <td class="text-center">
+                                                <a asp-controller="Market" asp-action="Edit" asp-route-name="@item.Name" class="btn btn-sm btn-outline-primary me-1" title="Edit">
+                                                    <i class="bx bx-edit"></i>
+                                                </a>
+                                                <form method="post" asp-controller="Market" asp-action="DeleteProduct" class="d-inline">
+                                                    <input type="hidden" name="name" value="@item.Name" />
+                                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                                        <i class="bx bx-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

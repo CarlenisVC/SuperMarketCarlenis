@@ -1,0 +1,50 @@
+﻿@model Application.Viewmodels.EditProductViewModel
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white fw-bold">
+                    ✏️ Edit Product
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Market" asp-action="EditProduct" method="post">
+                        <input type="hidden" asp-for="OriginalName" />
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Name</label>
+                            <input asp-for="Name" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label">Description</label>
+                            <input asp-for="Description" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Price" class="form-label">Price</label>
+                            <input asp-for="Price" type="number" step="0.01" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProductType" class="form-label">Product Type</label>
+                            <select asp-for="ProductType" class="form-select">
+                                <option value="1">Fruit</option>
+                                <option value="2">Vegetable</option>
+                                <option value="3">Dairy Product</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-outline-success me-2">Save Changes</button>
+                            <a asp-controller="Market" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

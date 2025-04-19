@@ -1,0 +1,43 @@
+﻿@model Application.Viewmodels.CreateProductViewModel
+@{
+    ViewData["Title"] = "New product";
+}
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <div class="card">
+            <div class="card-header bg-primary text-light">
+                <strong>Create product</strong>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-controller="Market" asp-action="CreateProduct">
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Name:</label>
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label">Description:</label>
+                        <input asp-for="Description" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Price" class="form-label">Price:</label>
+                        <input asp-for="Price" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ProductType" class="form-label">Product type:</label>
+                        <select class="form-select" asp-for="ProductType">
+                            <option value="1">Fruits</option>
+                            <option value="2">Vegetables</option>
+                            <option value="3">Dairy products</option>
+                        </select>
+
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-outline-primary float-end">Save</button>
+                        <a asp-controller="Market" asp-action="Index" class="btn btn-outline-warning float-end me-2">Back to home</a>                  
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
